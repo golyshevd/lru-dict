@@ -1,7 +1,7 @@
 lru-dict [![Build Status](https://travis-ci.org/golyshevd/lru-dict.svg)](https://travis-ci.org/golyshevd/lru-dict)
 =========
 
-lru-dict is fast lru cache implemented in 3 interfaces
+```lru-dict``` is fast lru cache implemented in 3 interfaces
 
 #LRUDict
 
@@ -121,8 +121,7 @@ setTimeout(function () {
 
 if the third argument was omitted then value will be never expired
 
-##LRUDictTtlAsync
-
+#LRUDictTtlAsync
 Same as LRUDictTtl but with async interface of all methods. Last argument is callback function.
 
 ```js
