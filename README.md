@@ -131,3 +131,6 @@ cache.set('foo', 'bar', 1, function (err, res) {
     // do stuff
 });
 ```
+
+---------
+LICENSE [MIT](LICENSE)
