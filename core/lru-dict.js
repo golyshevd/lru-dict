@@ -5,41 +5,6 @@
  * @param {Number} [size]
  * */
 function LRUDict(size) {
-    var self = this;
-
-    /**
-     * @public
-     * @memberOf {LRUDict}
-     * @property
-     * @type {Number}
-     * */
-    Object.defineProperty(this, 'size', {
-        get: function () {
-            return self._size;
-        },
-        set: function (size) {
-            size = Math.max(size, 0);
-            crop(self, size);
-            self._size = size;
-        }
-    });
-
-    /**
-     * @public
-     * @memberOf {LRUDict}
-     * @property
-     * @type {Number}
-     * */
-    Object.defineProperty(this, 'length', {
-        get: function () {
-            return self._leng;
-        },
-        set: function (leng) {
-            leng = Math.max(leng, 0) | 0;
-            crop(self, leng);
-            self._leng = leng;
-        }
-    });
 
     /**
      * @protected
@@ -87,11 +52,36 @@ function LRUDict(size) {
 /**
  * @public
  * @memberOf {LRUDict}
- * @method
- *
- * @constructs
+ * @property
+ * @type {Number}
  * */
-LRUDict.prototype.constructor = LRUDict;
+Object.defineProperty(LRUDict.prototype, 'size', {
+    get: function () {
+        return this._size;
+    },
+    set: function (size) {
+        size = Math.max(size, 0);
+        crop(this, size);
+        this._size = size;
+    }
+});
+
+/**
+ * @public
+ * @memberOf {LRUDict}
+ * @property
+ * @type {Number}
+ * */
+Object.defineProperty(LRUDict.prototype, 'length', {
+    get: function () {
+        return this._leng;
+    },
+    set: function (leng) {
+        leng = Math.max(leng, 0) | 0;
+        crop(this, leng);
+        this._leng = leng;
+    }
+});
 
 /**
  * @public
